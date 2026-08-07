@@ -1,0 +1,64 @@
+name: memcached
+icon: memcached
+type: datastore
+title: Memcached
+
+options:
+- version: '1.6'
+  tag: '1.6'
+  default: true
+
+endpoints:
+- name: memcached
+  ports:
+  - name: memcached
+    number: 11211
+    protocol: tcp
+
+labels:
+- memcached
+
+settings:
+- name: memory
+  title: Cache memory (MB)
+  description: Memory reserved for cached items; total process memory usage is higher
+  default: '64'
+  var: MEMCACHED_MEMORY
+- name: threads
+  title: Worker threads
+  default: '4'
+  var: MEMCACHED_THREADS
+- name: max_connections
+  title: Maximum connections
+  default: '1024'
+  var: MEMCACHED_MAX_CONNECTIONS
+
+helm:
+  name: wodby
+  source: oci://registry-1.docker.io/wodby/memcached
+  chart: oci://registry-1.docker.io/wodby/memcached
+  version: 0.1.0
+  valueMappings:
+    replicas: replicaCount
+    fullnameOverride: fullnameOverride
+    serviceAccountName: serviceAccount.name
+    serviceAccountCreate: serviceAccount.create
+
+workloads:
+- name: main
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: '{{helm.release}}'
+  kind: deployment
+  primary: true
+  helm:
+    labels: podLabels
+    annotations: podAnnotations
+    volumes: extraVolumes
+  containers:
+  - name: memcached
+    image: wodby/memcached
+    helm:
+      resources: resources
+      env: envVars
+      mounts: extraVolumeMounts
