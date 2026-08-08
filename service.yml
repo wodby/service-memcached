@@ -5,7 +5,7 @@ title: Memcached
 
 options:
 - version: '1.6'
-  tag: '1.6'
+  tag: '1.6-2.23.4'
   default: true
 
 endpoints:
@@ -21,7 +21,8 @@ labels:
 settings:
 - name: memory
   title: Cache memory (MB)
-  description: Memory reserved for cached items; total process memory usage is higher
+  description: Memory reserved for cached items; total process memory usage is 
+    higher
   default: '64'
   var: MEMCACHED_MEMORY
 - name: threads
