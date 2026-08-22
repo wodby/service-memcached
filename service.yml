@@ -34,6 +34,12 @@ settings:
   default: '1024'
   var: MEMCACHED_MAX_CONNECTIONS
 
+deployment:
+  strategy: recreate
+  minReady: 10s
+  progressDeadline: 15m
+  shutdownGracePeriod: 30s
+
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/memcached
