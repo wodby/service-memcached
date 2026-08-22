@@ -38,7 +38,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/memcached
   chart: oci://registry-1.docker.io/wodby/memcached
-  version: 0.1.0
+  version: 0.2.0
   valueMappings:
     replicas: replicaCount
     fullnameOverride: fullnameOverride
