@@ -5,9 +5,8 @@ title: Memcached
 
 options:
 - version: '1.6'
-  tag: '1.6-2.23.5'
+  tag: 1.6-r0
   default: true
-
 endpoints:
 - name: memcached
   ports:
@@ -44,7 +43,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/memcached
   chart: oci://registry-1.docker.io/wodby/memcached
-  version: 0.2.0
+  version: 0.2.1
   valueMappings:
     replicas: replicaCount
     fullnameOverride: fullnameOverride

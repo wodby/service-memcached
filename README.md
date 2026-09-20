@@ -25,7 +25,7 @@ configuration for Memcached.
 | Endpoints | `memcached`: TCP 11211 |
 | Service links | None |
 | Application build | Not buildable from application source |
-| Helm | chart `oci://registry-1.docker.io/wodby/memcached`; version `0.1.0` |
+| Helm | chart `oci://registry-1.docker.io/wodby/memcached`; version `0.2.1` |
 | Configuration and operations | 3 settings |
 
 ## Use this service
