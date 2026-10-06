@@ -2,6 +2,7 @@ name: memcached
 icon: memcached
 type: datastore
 title: Memcached
+guidance: GUIDANCE.md
 
 options:
 - version: '1.6'
