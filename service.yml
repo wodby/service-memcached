@@ -6,7 +6,7 @@ guidance: GUIDANCE.md
 
 options:
 - version: '1.6'
-  tag: 1.6-r0
+  tag: 1.6-r1
   default: true
 endpoints:
 - name: memcached
