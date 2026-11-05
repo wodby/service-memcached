@@ -65,6 +65,10 @@ workloads:
   containers:
   - name: memcached
     image: wodby/memcached
+    resources:
+      request:
+        cpu: 20
+        memory: 32
     helm:
       resources: resources
       env: envVars
