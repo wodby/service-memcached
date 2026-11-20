@@ -7,6 +7,7 @@ guidance: GUIDANCE.md
 options:
 - version: '1.6'
   tag: 1.6-r2
+  digest: sha256:0649f2b8ca68ac064a0b6642e9bc55c0420bbda0346de17e7e6a165a10bd2abc
   default: true
 endpoints:
 - name: memcached
@@ -21,8 +22,7 @@ labels:
 settings:
 - name: memory
   title: Cache memory (MB)
-  description: Memory reserved for cached items; total process memory usage is 
-    higher
+  description: Memory reserved for cached items; total process memory usage is higher
   default: '64'
   var: MEMCACHED_MEMORY
 - name: threads
